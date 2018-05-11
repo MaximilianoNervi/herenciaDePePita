@@ -5,24 +5,18 @@ class Golondrina inherits Ave {
 
 	method energia() = energia
 
-	method volar(metros) {
-		if (self.estaCansada()) {
-			self.comer(alpiste)
-		}
-		if (energia > metros) self.calculoDeConsumo(metros)
-		 else self.error("la energia es muy poca para volar 
-				esa distancia")
-	}
-	method estaCansada(){
+	override method estaCansada(){
 		return energia < 50 
 	}
-
+	override method volar(metros){
+		super(metros+10)
+	}
 	override method velocidad() {
 		if (self.estaCansada()) return 10 else return 20
 	}
 
-	method calculoDeConsumo(metros) {
-		energia -= metros + 10
+	override method calculoDeConsumo(metros) {
+		energia = metros + 10
 	}
 
 }

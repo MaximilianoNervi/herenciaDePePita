@@ -1,7 +1,7 @@
+import comida.*
 class Ave {
 
 	var energia = 100
-	var metrosVoladosPrevioALaUltimaComida = 0
 
 	method comer(comida) {
 		if (self.velocidad() <= comida.velocidad()) {
@@ -9,12 +9,21 @@ class Ave {
 			su comida")
 		}
 		energia += comida.energia()
-		metrosVoladosPrevioALaUltimaComida = 0
 	}
-
+	
+	method volar(metros){
+		if (self.estaCansada())	self.comer(alpiste)
+		
+		if (metros < energia) self.calculoDeConsumo(metros)
+		 else self.error("la energia es muy poca para volar 
+			esa distancia")
+	}
+	method estaCansada()
+	
 	method velocidad() {
 		return 0
 	}
-
+	
+	method calculoDeConsumo(metros)
 }
 
