@@ -1,7 +1,14 @@
 object alpiste {
-	const property energia = 5	
+
+	const property velocidad = 0
+	const property energia = 5
+
 }
 
 object manzana {
+
+	const property velocidad = 0
 	const property energia = 80
+
 }
+
